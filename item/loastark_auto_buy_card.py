@@ -47,11 +47,11 @@ element.click()
 driver.implicitly_wait(10)
 
 time.sleep(3)
-pyautogui.write('###ID###')  # Fill in your ID or E-mail
+pyautogui.write('yourid')  # Fill in your ID or E-mail
 pyautogui.press('tab', presses=2)  # Press the Tab key 2 times
 pyautogui.press('enter')
 time.sleep(3)  # wait a process
-pyautogui.write('###PW###')  # Fill in your PW
+pyautogui.write('yourpw')  # Fill in your PW
 pyautogui.press('tab', presses=2)  # Press the Tab key 2 times
 pyautogui.press('enter')
 
@@ -70,6 +70,7 @@ try:
     element = driver.find_element(By.XPATH, "//button[@type='button'][@class='bt-buy'][@data-itemcode='1100508']")
     element.click()
 except:
+    print('전희팩 없음')
     sys.exit()
 
 # 동의
@@ -85,29 +86,14 @@ element = driver.find_element(By.XPATH, "//button[@type='button'][@class='lui-mo
 element.click()
 time.sleep(1)
 
-element = driver.find_element(By.XPATH, "//button[@type='button'][@name='btnRandompad'][text()='4']")
-element.click()
-time.sleep(1)
+for _ in range(3):
+    element = driver.find_element(By.XPATH, "//button[@type='button'][@name='btnRandompad'][text()='4']")
+    element.click()
+    time.sleep(1)
 
-element = driver.find_element(By.XPATH, "//button[@type='button'][@name='btnRandompad'][text()='1']")
-element.click()
-time.sleep(1)
-
-element = driver.find_element(By.XPATH, "//button[@type='button'][@name='btnRandompad'][text()='4']")
-element.click()
-time.sleep(1)
-
-element = driver.find_element(By.XPATH, "//button[@type='button'][@name='btnRandompad'][text()='1']")
-element.click()
-time.sleep(1)
-
-element = driver.find_element(By.XPATH, "//button[@type='button'][@name='btnRandompad'][text()='4']")
-element.click()
-time.sleep(1)
-
-element = driver.find_element(By.XPATH, "//button[@type='button'][@name='btnRandompad'][text()='1']")
-element.click()
-time.sleep(1)
+    element = driver.find_element(By.XPATH, "//button[@type='button'][@name='btnRandompad'][text()='1']")
+    element.click()
+    time.sleep(1)
 
 element = driver.find_element(By.XPATH, "//button[@type='submit'][@class='button button--password-confirm']")
 element.click()
