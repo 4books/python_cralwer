@@ -1,4 +1,4 @@
-from item.crawler import Crawler
+from item.crawler_test import Crawler
 
 if __name__ == '__main__':
     c = Crawler
